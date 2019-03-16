@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}  User Connecté{% endblock %}
+
+{% block body %}
+    <div class="container cryptos">
+         <h1>Les différents transactions des utilisateurs</h1>
+        <div class="row">
+            {% for transaction in transactions %}
+                <div class="col-md-4 ">
+                    {# <p class="text-small"> {{ text.montant }}</p> #}
+                    <img src="{{ transaction.picture }}" alt="">
+                    <h2><a href="">{{ transaction.nom}}</a> à {{transaction.id }} aux totals</h2>
+                    <hr>
+                    <p> <span class="badge badge-primary" >Transaction de : {{transaction.prenom}}-{{ transaction.nom}} </span</p>
+                    <p>Etat : {{ transaction.etat }} </p>
+                    <p> Type : {{transaction.type}}</p>
+                   
+                </div>
+            {% endfor %}
+        </div>  
+    </div>
+{% endblock %}

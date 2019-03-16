@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Achat de crypto monnaie {% endblock %}
+
+{% block body %}
+    <div class="container">
+         <h1>Achat de crypto monnaie</h1>
+         
+        {{ form_start(formBuy) }}
+        {# <small class="text-danger">Impossible d'achat le solde est trop petit par rapport aucours du bitcoin en cours</small> #}
+        <p> <strong>Buy:</strong> Corporis voluptatem dolorem facilis laboriosam ex qui molestiae.</p>
+        {{ form_row(formBuy.quantity) }}
+        <a href="" class="btn btn-primary">Valider achat !</a>
+        {{ form_end(formBuy) }}
+    </div>
+   
+{% endblock %}

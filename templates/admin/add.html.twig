@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {% if editMod %} Modif User{% else %} Ajout User  {% endif %} {% endblock %}
+
+{% block body %}
+    <div class="container">
+        {% if editMod %}
+            <h1>Modification d'un membre</h1>
+            <img src="{{ editPhoto }}" alt="">
+        {% else %}
+        <h1>Ajout d'un membre</h1>
+         {% endif %}
+        {{ form_start(formUsers) }}
+
+         {{ form_widget(formUsers) }}
+         <button class="btn btn-primary">
+            {% if editMod %}
+                UPDATE USER
+            {% else %}
+                ADD User
+            {% endif %}
+         </button>
+
+          {{ form_end(formUsers) }}
+    </div>
+{% endblock %}

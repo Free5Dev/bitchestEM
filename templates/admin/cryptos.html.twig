@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} listes des Crypto monnaies {% endblock %}
+
+{% block body %}
+    <div class="container cryptos">
+         <h1>Les Crypto - monnaies</h1>
+        <div class="row">
+            {% for crypto in cryptos %}
+            <div class="col-md-4">
+                {% set url= path('admin_cryptoSlug',{'slug':crypto.slug}) %}
+                <a href="{{ url }}"><img src="{{ crypto.image }}" alt=""></a>
+                <h2><a href="{{ url }}">{{ crypto.nom}}</a></h2>
+                <p><a href="{{ url }}" class="btn btn-primary">Voir Cours</a></p>
+            </div>
+            {% endfor %}
+        </div> 
+    </div>
+    {#  #}
+   
+{% endblock %}

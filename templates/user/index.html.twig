@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Porte Feuille Utilisateur{% endblock %}
+
+{% block body %}
+    <div class="container cryptos">
+        <h1>Mon Porte feuille</h1>
+        <div class="row">
+            {% for wallet in wallets %}
+                <div class="col-md-4 ">
+                    {% set wallets= wallet.cryptos %}
+                    {% set url= path('user_walletDetails',{'id':wallet.id}) %}
+                    <a href="{{ url }}"><img src="{{ wallets.image }}" alt=""></a>
+                    <h2><a href="{{ url }}">{{ wallets.nom}}</a></h2>
+                    <p><a href="{{ url }}" class="btn btn-primary">Voir Contenu porte feuille</a></p>
+                </div>
+            {% endfor %}
+        </div>        
+    </div>
+{% endblock %}

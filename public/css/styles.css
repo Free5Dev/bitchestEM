@@ -1,0 +1,52 @@
+/* -----------------Les cryptos */
+div.cryptos h1{
+    margin:10px 0px;
+    
+}
+div.cryptos .col-md-4{
+    background-size: cover;
+    margin-bottom: 15px;
+    text-align:justify;
+}
+div.cryptos .col-md-4 h2 a{
+    text-decoration: none;
+    color: #181818;
+}
+div.cryptos .col-md-4 img{
+    width: 100%;
+    height:200px;
+}
+div.entete{
+   
+    height:200px;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+   display: flex;
+   flex-direction:column;
+}
+div.entete .container {
+    margin:auto;
+}
+div.entete .container  h1{
+    color: #fff;
+    text-shadow: 3px 2px 3px black;
+}
+.avatar{
+    max-width:128px;
+    max-height:128px;
+    border-radius:50%;
+}
+.avatar-medium{
+    max-width: 64px ;
+    max-height:64px;
+}
+/* pour l'avatar au niveau du dropdown menu */
+.avatar-mini{
+    max-width:24px;
+    max-height:24px;
+}
+.imgList{
+    width: 64px;
+    height: 64px;
+}

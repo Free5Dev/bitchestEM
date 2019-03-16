@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}  {% endblock %}
+
+{% block body %}
+    <div class="container cryptos">
+        <h1>Liste des Porte feuilles des Users</h1>
+        <div class="row">
+            {% for text in essaye %}
+                <div class="col-md-4 ">
+                    {# <p class="text-small"> {{ text.montant }}</p> #}
+                    <img src="{{ text.picture }}" alt="">
+                    <h2><a href="">{{ text.nom}}</a></h2>
+                    <hr>
+                    <p> <span class="badge badge-primary" >Porte feuille de : {{text.prenom}}-{{ text.nom}} </span</p>
+                    <p>Prix : {{ text.prix }} {{ text.sigle }}</p>
+                    <p> Montant : {{text.montant}}</p>
+                    <p>Solde:{{text.balance}}  €</p>
+                    <a href="" class="btn btn-danger">Supprimer le porte feuille</a>
+                </div>
+            {% endfor %}
+        </div> 
+    </div>
+{% endblock %}

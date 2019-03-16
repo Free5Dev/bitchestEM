@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Gestion Users {% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row mt-3 mb-3">
+            <div class="col-md-8">
+                 <h1>Gestion des utilisateurs</h1>
+            </div>
+            <div class="col-md-3 mt-3 mb-3">
+                <a href="{{ path('admin_add') }}" class="btn btn-primary">ADD USER</a>
+            </div>
+        </div>
+       {# table #}
+       <table class="table table-hover">
+           <tr>
+                <th>Nom</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Photo User</th>
+                <th>Modification</th>
+                <th>Suppression</th>
+           </tr>
+           {% for user in users  %}
+                <tr>
+                    <td>{{ user.nom }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td><img src="{{ user.picture }}" alt="{{ user.nom }}" class="imgList"/></td>
+                    <td><a href="{{ path('admin_update',{'id':user.id}) }}">Modification</a></td>
+                    <td><a href="{{ path('admin_delete',{'id':user.id}) }}">Suppression</a></td>
+                </tr>
+           {% endfor %}
+       </table>
+    </div>
+{% endblock %}

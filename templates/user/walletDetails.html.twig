@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title  %} Wallet - Details {% endblock %}
+
+{% block body %}
+    <div class="entete" style="background-image:url({{ wallet.cryptos.image }}); ">
+            <div class="container">
+                <h1> {{ wallet.cryptos.nom }} </h1>
+            </div>
+            
+    </div>
+    <div class="container">
+        <h1>Contenu du wallet</h1>
+        <div class="row mt-5">
+                <div class="col-md-8">
+                    <h3>{{ wallet.cryptos.nom}}</h3>
+                    {{ wallet.cryptos.content | raw }}
+                </div>
+                <div class="col-md-4">
+                    <h5>Les valeurs du porte monnaie <mark class="text-danger">{{ wallet.cryptos.sigle }}</mark></h5>
+                    <h2>Le prix <span class="text-danger">{{wallet.prix}} </span></h2>
+                    <h2>Le montant <span class="text-danger">{{wallet.montant}} euros </span></h2>
+
+                   
+                </div>
+        </div>
+    </div>
+        
+{% endblock %}
